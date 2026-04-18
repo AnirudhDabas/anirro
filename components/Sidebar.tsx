@@ -47,7 +47,7 @@ export default function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`nav-link${active ? "active" : ""}`}
+              className={`nav-link ${active ? "active" : ""}`}
             >
               {item.label}
             </Link>
