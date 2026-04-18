@@ -4,7 +4,7 @@ Personal site of Anirudh Dabas.
 
 ## Stack
 
-- Next.js 15 (App Router)
+- Next.js 16 (App Router)
 - TypeScript
 - Tailwind CSS v4
 - EB Garamond via `next/font/google`
