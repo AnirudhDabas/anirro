@@ -74,9 +74,20 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      <div aria-hidden="true" className="mt-10 text-center text-[#9a9a9a]">
+      <div aria-hidden="true" className="mt-10 text-center text-[var(--muted)]">
         ‹ ⚜ ›
       </div>
+      <p className="mt-2 text-center text-[0.7rem] text-[var(--muted)]">
+        Inspired by{" "}
+        <a
+          href="https://zachyu.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[var(--muted)] no-underline hover:underline"
+        >
+          Zachary Yu
+        </a>
+      </p>
     </aside>
   );
 }

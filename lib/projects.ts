@@ -9,7 +9,7 @@ export const projects: Project[] = [
     name: "waddleloo.com",
     href: "https://waddleloo.com",
     description:
-      "Full-stack AI goose tracking platform for UW campus. Went viral with 500K+ views, 1K+ daily active users at peak, and covered by CBC News. YOLOv8 + Gemini Vision pipeline, OSRM route planner that reroutes around goose hotspots within 60m. Expanded to WLU.",
+      "Full-stack AI goose tracking platform for UW campus. Went viral with 1M+ views, 1K+ daily active users at peak, and covered by CBC and CTV News. YOLOv8 + Gemini Vision pipeline, OSRM route planner that reroutes around goose hotspots within 60m. Expanded to WLU.",
   },
   {
     name: "bystander",
@@ -27,7 +27,7 @@ export const projects: Project[] = [
     name: "trend weavers media",
     href: "#", // TODO
     description:
-      "Co-founder. Built full-stack automation and analytics tools driving $85K+ revenue across 15+ clients. Python pipelines integrating Meta and TikTok APIs to automate weekly reporting, saving 20+ hours/month. Client platforms on Next.js + Supabase with RLS.",
+      "Co-founder (2023–2025). Built full-stack automation and analytics tools driving $85K+ revenue across 15+ clients. Python pipelines integrating Meta and TikTok APIs to automate weekly reporting, saving 20+ hours/month. Client platforms on Next.js + Supabase with RLS.",
   },
   {
     name: "findme (talent4assure)",

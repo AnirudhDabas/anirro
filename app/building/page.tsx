@@ -5,7 +5,7 @@ import { projects } from "@/lib/projects";
 export default function Building() {
   return (
     <>
-      <PageTitle>Anirudh Dabas</PageTitle>
+      <PageTitle>Anirudh Dabas (अनिरुद्ध दाबास)</PageTitle>
       <ProjectList projects={projects} />
     </>
   );

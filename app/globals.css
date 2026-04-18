@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --fg: #1a1a1a;
-  --muted: #6b6b6b;
-  --bg: #ffffff;
+  --bg: #f5f0e6;
+  --fg: #2b1f0e;
+  --muted: #8a7560;
+  --link: #2b1f0e;
+  --rule: #c4b49a;
 }
 
 @theme inline {
+  --color-bg: var(--bg);
   --color-fg: var(--fg);
   --color-muted: var(--muted);
-  --color-bg: var(--bg);
+  --color-rule: var(--rule);
 }
 
 html {
@@ -19,10 +22,27 @@ html {
 
 body {
   font-size: 1.0625rem;
-  line-height: 1.7;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures;
+  font-variant-numeric: oldstyle-nums;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  opacity: 0.018;
+}
+
+h1 {
+  letter-spacing: -0.01em;
 }
 
 main a {
