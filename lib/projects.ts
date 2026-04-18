@@ -4,6 +4,13 @@ export type Project = {
   description: string;
 };
 
+export type EarlyProject = {
+  name: string;
+  href?: string;
+  tech: string;
+  description: string;
+};
+
 export const projects: Project[] = [
   {
     name: "feedfilterai",
@@ -69,5 +76,34 @@ export const projects: Project[] = [
     href: "#", // TODO
     description:
       "Built real-time GPS ingestion, geofence processing, background location syncing, and emergency alerts for a safety app. React Native + Node.js + MongoDB. Cut API latency by 30% via indexing, geospatial lookup caching, and aggregation pipeline tuning.",
+  },
+];
+
+export const earlyProjects: EarlyProject[] = [
+  {
+    name: "minesweeper ai",
+    href: "https://github.com/AnirudhDabas",
+    tech: "Python, Pygame",
+    description:
+      "AI that autonomously plays Minesweeper by analyzing board states and making rule-based inferences. Built in pure Python with Pygame.",
+  },
+  {
+    name: "api rate limiter",
+    tech: "System Design, Distributed Systems",
+    description:
+      "Private service for deterministic request throttling, burst handling, and scalable abuse prevention across distributed backends.",
+  },
+  {
+    name: "distributed job queue",
+    href: "https://github.com/AnirudhDabas",
+    tech: "Node.js, Redis",
+    description:
+      "Background job processing system with retry logic, failure isolation, idempotent execution, and graceful recovery from transient failures.",
+  },
+  {
+    name: "smartgallery",
+    tech: "Django, InsightFace, OpenCV, Scikit-learn",
+    description:
+      "Self-hosted photo management system that organizes libraries by people and events using face detection, identity clustering, and timestamp-based event grouping.",
   },
 ];

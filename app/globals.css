@@ -51,3 +51,77 @@ main a {
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
+
+details.early-projects {
+  margin-top: 3rem;
+}
+
+details.early-projects summary {
+  width: fit-content;
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+  user-select: none;
+}
+
+details.early-projects summary::-webkit-details-marker {
+  display: none;
+}
+
+details.early-projects summary::before {
+  content: "+ ";
+  font-style: normal;
+}
+
+details[open].early-projects summary::before {
+  content: "− ";
+  font-style: normal;
+}
+
+details.early-projects summary:hover {
+  color: var(--fg);
+}
+
+details.early-projects ol {
+  margin-top: 1.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+details.early-projects li {
+  margin-bottom: 1.75rem;
+}
+
+details.early-projects .project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+details.early-projects .project-header a,
+details.early-projects .project-header span:first-child {
+  font-size: 1rem;
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+details.early-projects .project-header span:first-child:not(a) {
+  text-decoration: none;
+}
+
+details.early-projects .tech {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+details.early-projects p {
+  max-width: 600px;
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--fg);
+}
