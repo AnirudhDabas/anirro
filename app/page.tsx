@@ -5,18 +5,16 @@ export default function Home() {
     <>
       <PageTitle>Anirudh Dabas (अनिरुद्ध दाबास)</PageTitle>
       <div className="mt-10 space-y-6">
-        <p>I make ideas real, fast.</p>
-        <p>
-          I&apos;m a Computer Science student at the{" "}
-          <a
-            href="https://uwaterloo.ca"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            University of Waterloo
-          </a>{" "}
-          on the President&apos;s Scholarship of Distinction. I like building
-          things that go viral, win hackathons, or both.
+        <p>waterloo cs, 18.</p>
+        <p
+          style={{
+            textAlign: "center",
+            color: "var(--muted)",
+            letterSpacing: "0.4em",
+            fontSize: "0.75rem",
+          }}
+        >
+          ✦ ✦ ✦
         </p>
         <div>
           <p>In my lifetime I want to:</p>

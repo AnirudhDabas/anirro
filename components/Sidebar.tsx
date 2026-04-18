@@ -80,7 +80,7 @@ export default function Sidebar() {
       <p className="mt-2 text-center text-[0.7rem] text-[var(--muted)]">
         Inspired by{" "}
         <a
-          href="https://zachyu.com"
+          href="https://www.zacharyyu.com"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[var(--muted)] no-underline hover:underline"

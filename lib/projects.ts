@@ -6,6 +6,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "feedfilterai",
+    href: "https://feedfilterai.vercel.app",
+    description: "AI-powered feed filtering. In progress.",
+  },
+  {
+    name: "shelf",
+    href: "https://github.com/AnirudhDabas/shelf",
+    description: "Autonomous search optimization for storefronts. Early stage.",
+  },
+  {
     name: "waddleloo.com",
     href: "https://waddleloo.com",
     description:

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { EB_Garamond } from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
 import Sidebar from "@/components/Sidebar";
 import "./globals.css";
 
-const ebGaramond = EB_Garamond({
+const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={ebGaramond.className}>
+    <html lang="en" className={cormorantGaramond.className}>
       <body>
         <div className="mx-auto min-h-screen max-w-[1120px] px-6 pt-12 pb-16 md:px-12 md:pt-20 lg:px-24">
           <div className="flex flex-col gap-10 md:flex-row md:gap-16">
