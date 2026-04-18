@@ -1,0 +1,389 @@
+# anirro — Addendum v5: Fixes & Polish
+
+Apply all changes below in one pass. Do not ask questions.
+Commit at the end with the message in the final section.
+
+---
+
+## Change 1 — Fix Hindi text: smaller size + correct spelling
+
+In `components/PageTitle.tsx`, change the heading from:
+
+```
+Anirudh Dabas (अनिरुद्ध दाबास)
+```
+
+to:
+
+```tsx
+<h1>
+  Anirudh Dabas{" "}
+  <span style={{ fontSize: "0.55em", opacity: 0.6, fontWeight: 400 }}>
+    (अनिरुद्ध डबास)
+  </span>
+</h1>
+```
+
+The Hindi span should:
+- Be 55% the size of the main heading (so ~1.375rem if h1 is 2.5rem)
+- Opacity 0.6 so it reads as a subtle annotation, not equal weight
+- Same font, same color, no other changes
+
+---
+
+## Change 2 — Move "Inspired by Zachary Yu" out of sidebar
+
+Remove it entirely from `components/Sidebar.tsx`.
+
+Add it instead to `app/layout.tsx` (or a new `components/Footer.tsx` if cleaner),
+as a single line at the very bottom of the `<main>` content area — below all page content,
+above nothing. It should:
+
+- Render on every page (put it in the root layout, not per-page)
+- Font size: `0.65rem`
+- Color: `var(--muted)` at 50% opacity: `color: color-mix(in srgb, var(--muted) 50%, transparent)`
+- Text: `inspired by zachary yu` (all lowercase)
+- "zachary yu" is a link to `https://www.zacharyyu.com` — same faded color, underline on hover only
+- Position: bottom-left, aligned with the main content column (not centered, not in the sidebar)
+- `margin-top: 4rem`, `margin-bottom: 2rem`
+- No italics, no quotes
+
+---
+
+## Change 3 — Reorder projects in `lib/projects.ts`
+
+Reorder the main `projects` array by impressiveness. Final order:
+
+1. waddleloo.com — (1M+ views, CBC/CTV, most impressive by far)
+2. bystander — (Hack Canada 2026 winner)
+3. child abuse prevention app — (national hackathon 1st place)
+4. stoody — (real launched product, AI matching)
+5. feedfilterai — (strong ML stack)
+6. shelf — (early stage, move down from top)
+7. delriz — (production eCommerce, decommissioned)
+8. reimagine relief — (nonprofit)
+9. viberotech — (interesting outlier)
+10. trend weavers media — (2023–2025)
+11. findme / talent4assure — (internship work)
+
+Note: shelf was previously at the top because it was "newest" but impressiveness-wise
+it belongs lower since it's barely started. Waddleloo is the crown jewel, lead with it.
+
+---
+
+## Change 4 — Rewrite home page content in `app/page.tsx`
+
+Replace ALL current body content (bio paragraph, ornament, goals section) with:
+
+```tsx
+<p>
+  You can call me Ani.
+</p>
+
+<p>
+  waterloo cs, 18. I build things that ship — sometimes they go viral.
+</p>
+
+<p>
+  My work sits at the intersection of AI infrastructure and product.
+  I care about systems that make real decisions, stay up under load,
+  and quietly replace human effort.
+</p>
+
+<p>
+  Right now I&apos;m VP of Outreach at the{" "}
+  <a href="https://uwdsc.ca" target="_blank" rel="noopener noreferrer">
+    UWaterloo Data Science Club
+  </a>
+  , putting student talent in front of the companies building what&apos;s next.
+</p>
+
+<p>
+  Previously: built{" "}
+  <a href="https://waddleloo.com" target="_blank" rel="noopener noreferrer">
+    Waddleloo
+  </a>{" "}
+  — a goose-avoidance platform that hit 1M+ views and got covered by CBC and CTV.
+  Won Hack Canada 2026. First place at a national hackathon.
+  Co-founded a media agency that did $85K in revenue before I wound it down.
+</p>
+
+<p>
+  I&apos;m exploring Fall 2026 internships. If you&apos;re building something
+  interesting,{" "}
+  <a href="mailto:a2dabas@uwaterloo.ca">get in touch</a>.
+</p>
+```
+
+This paragraph structure:
+- Leads with personality ("call me Ani")
+- States identity fast ("waterloo cs, 18")
+- Shows technical depth (AI infra, systems thinking)
+- Demonstrates leadership (UWDSC VP)
+- Name-drops the highlights without a bulleted list (Waddleloo, Hack Canada, $85K)
+- Ends with a direct CTA for recruiters
+
+Remove the ✦ ✦ ✦ ornament. Remove the "In my lifetime I want to:" section entirely.
+
+---
+
+## Change 5 — Minimal animations
+
+Add subtle, tasteful animations that match the paper aesthetic.
+NO: bouncing, scaling, color flashing, parallax, or anything that feels like a SaaS landing page.
+YES: gentle fade-ins, soft underline reveals, a single cursor blink.
+
+### 5a — Page content fade-in
+
+In `app/globals.css`, add:
+
+```css
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+main {
+  animation: fadein 0.5s ease forwards;
+}
+```
+
+This fades the entire main content area in on navigation. 0.5s, translateY of only 6px —
+imperceptible on first glance but makes page transitions feel intentional.
+
+### 5b — Nav link underline reveal on hover
+
+Replace the existing hover underline on nav links with a CSS-only slide-in underline.
+In `app/globals.css` (or inline in Sidebar.tsx via style tag):
+
+```css
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--fg);
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+```
+
+Apply class `nav-link` to all sidebar navigation `<a>` tags.
+For the active link, also apply `active` class (already determined by `usePathname`).
+
+### 5c — Project list entry fade-in stagger
+
+In `components/ProjectList.tsx`, add a CSS animation delay per item using inline style:
+
+```tsx
+<li
+  key={i}
+  style={{
+    animationDelay: `${i * 60}ms`,
+    animation: "fadein 0.4s ease both",
+  }}
+>
+```
+
+This staggers each project entry by 60ms — subtle enough to feel like loading,
+not like a showreel. Requires the `fadein` keyframe from 5a to be defined globally.
+
+### 5d — Details/summary toggle transition
+
+In `app/globals.css`, add a smooth open animation for the early projects dropdown:
+
+```css
+details.early-projects[open] ol {
+  animation: fadein 0.3s ease forwards;
+}
+```
+
+---
+
+## Change 6 — Mobile layout fixes
+
+This is the most important change. The current layout breaks on mobile because the
+two-column sidebar + main approach requires explicit responsive handling.
+
+### 6a — Root layout responsive CSS
+
+In `app/globals.css`, ensure the layout wrapper switches to a single column on mobile.
+Find wherever the two-column layout is defined (likely a flex or grid on the outer wrapper
+in `app/layout.tsx`) and add/update:
+
+```css
+/* Desktop: sidebar left, content right */
+.layout {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Mobile: stack vertically */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    padding: 0 1.25rem;
+  }
+}
+```
+
+### 6b — Sidebar mobile styles
+
+In `components/Sidebar.tsx`, apply these responsive styles so the sidebar
+stacks cleanly above the content on mobile:
+
+```css
+/* Sidebar container */
+.sidebar {
+  width: 200px;           /* desktop */
+  padding-top: 5rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+```
+
+On mobile the sidebar nav links should:
+- Display as a horizontal flex row for the primary nav (Home, Building, Blog, Archive)
+- Wrap if needed
+- Gap of 1.25rem between items
+- Secondary links (Twitter, LinkedIn, GitHub, Email) stay vertical below, smaller font
+
+```css
+@media (max-width: 768px) {
+  .nav-primary {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .nav-secondary {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .sidebar-ornament {
+    display: none; /* hide ‹ ⚜ › on mobile, it just adds clutter */
+  }
+}
+```
+
+### 6c — Main content mobile padding
+
+```css
+main {
+  flex: 1;
+  padding-top: 5rem;      /* desktop */
+  padding-bottom: 4rem;
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    max-width: 100%;
+  }
+}
+```
+
+### 6d — Heading size on mobile
+
+```css
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.85rem;  /* down from 2.5rem — prevents overflow on narrow screens */
+  }
+}
+```
+
+### 6e — Project list mobile
+
+In `components/ProjectList.tsx` or its styles, the number column can cramp
+on narrow screens. Ensure the grid/flex for each list item switches to a
+simpler block layout on mobile:
+
+```css
+@media (max-width: 768px) {
+  .project-item {
+    display: block;
+  }
+
+  .project-number {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+}
+```
+
+### 6f — Meta viewport (sanity check)
+
+In `app/layout.tsx`, confirm the metadata includes viewport config:
+
+```ts
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+```
+
+If this is already present, skip it. If not, add it.
+
+---
+
+## Final commit
+
+Run `pnpm lint` and `pnpm prettier --write .`, then:
+
+```
+git add -A
+git commit -m "fix: mobile layout, home page rewrite, project reorder, hindi fix, animations"
+```
+
+Stop and print:
+```
+Done. Push with: git push origin main
+
+Fixed:
+  • Hindi text: smaller (0.55em), corrected to अनिरुद्ध डबास
+  • "Inspired by Zachary Yu" moved to bottom of content, very faint
+  • Project order: Waddleloo leads, shelf moved down, feedfilterai repositioned
+  • Home page: rewritten for recruiters, "call me Ani" opener, direct CTA
+  • Animations: fade-in on page load, staggered project list, sliding nav underlines
+  • Mobile: sidebar goes horizontal on top, content stacks below, heading shrinks
+
+Verify on mobile (375px width) that:
+  - Sidebar nav sits in a horizontal row above the content
+  - Heading does not overflow
+  - Project list numbers are readable
+  - "Inspired by Zachary Yu" is still visible but subtle
+```

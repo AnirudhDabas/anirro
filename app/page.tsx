@@ -8,36 +8,29 @@ export default function Home() {
       </PageTitle>
       <div className="mt-10 space-y-5">
         <p>You can call me Ani.</p>
+        <p>18, CS at Waterloo. I build stuff.</p>
         <p>
-          waterloo cs, 18. I build things that ship — sometimes they go viral.
+          I care most about AI infrastructure: the parts between a model and a
+          user where reliability, latency, and cost actually get decided.
         </p>
         <p>
-          I care most about AI infrastructure: the messy parts between a model
-          and a user where reliability, latency, and cost actually get decided.
+          I tend to build things that get out of hand. Built an AI goose tracker
+          for my campus, it hit 1M+ views, thousands of daily users, and ended
+          up on CBC and CTV. Won a couple national hackathons. Co-founded a
+          media agency before university, ran it to $85K across 15+ clients.
         </p>
         <p>
-          I serve as VP of{" "}
+          VP of Outreach at{" "}
           <a href="https://uwdsc.ca" target="_blank" rel="noopener noreferrer">
             UWDSC
-          </a>
-          , Waterloo&rsquo;s data science club.
-        </p>
-        <p>
-          Previously: built{" "}
-          <a
-            href="https://waddleloo.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            waddleloo.com
           </a>{" "}
-          (1M+ views, CBC/CTV coverage), won Hack Canada 2026, co-founded a
-          media agency that did $85K+ in revenue across 15+ clients.
+          right now. Exploring fall 2026 internships in SWE, AI infra, backend,
+          or applied ML.
         </p>
         <p>
-          Open to summer 2026 internships in AI infra, backend, or applied ML —
-          say hi at{" "}
-          <a href="mailto:a2dabas@uwaterloo.ca">a2dabas@uwaterloo.ca</a>.
+          Say hi at{" "}
+          <a href="mailto:a2dabas@uwaterloo.ca">a2dabas@uwaterloo.ca</a> or
+          anywhere on the left.
         </p>
       </div>
     </>

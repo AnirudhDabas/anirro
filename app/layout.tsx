@@ -35,14 +35,14 @@ export default function RootLayout({
             <Sidebar />
             <main className="w-full md:max-w-[800px]">
               {children}
-              <footer className="mt-24 text-[0.7rem] text-[var(--muted)] opacity-70">
-                Inspired by{" "}
+              <footer className="attribution mt-16 mb-6 text-[0.65rem] text-[var(--muted)] opacity-45">
+                inspired by{" "}
                 <a
                   href="https://www.zacharyyu.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Zachary Yu
+                  zachary yu
                 </a>
               </footer>
             </main>
