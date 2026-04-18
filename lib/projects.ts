@@ -13,6 +13,11 @@ export type EarlyProject = {
 
 export const projects: Project[] = [
   {
+    name: "shelf",
+    href: "https://github.com/AnirudhDabas/shelf",
+    description: "Autonomous search optimization for storefronts. Early stage.",
+  },
+  {
     name: "waddleloo.com",
     href: "https://waddleloo.com",
     description:
@@ -41,11 +46,6 @@ export const projects: Project[] = [
     href: "https://feedfilterai.vercel.app",
     description:
       "End-to-end AI moderation and analysis pipeline for social media content. Detects toxicity, sentiment, bias, named entities, and trending topics across thousands of posts in real time. FastAPI + Next.js + Zephyr-7B + GLiNER + SentenceTransformers + Detoxify + Docker.",
-  },
-  {
-    name: "shelf",
-    href: "https://github.com/AnirudhDabas/shelf",
-    description: "Autonomous search optimization for storefronts. Early stage.",
   },
   {
     name: "delriz",
