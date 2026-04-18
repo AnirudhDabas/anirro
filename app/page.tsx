@@ -14,10 +14,47 @@ export default function Home() {
           user where reliability, latency, and cost actually get decided.
         </p>
         <p>
-          I tend to build things that get out of hand. Built an AI goose tracker
-          for my campus, it hit 1M+ views, thousands of daily users, and ended
-          up on CBC and CTV. Won a couple national hackathons. Co-founded a
-          media agency before university, ran it to $85K across 15+ clients.
+          Built an{" "}
+          <a
+            href="https://waddleloo.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            AI goose tracker
+          </a>{" "}
+          for my campus, 1M+ views, thousands of daily users, covered by{" "}
+          <a
+            href="https://www.cbc.ca/news/canada/kitchener-waterloo/avoid-the-honk-interactive-map-helps-waterloo-students-stay-away-from-canada-geese-9.7151994"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CBC
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://www.ctvnews.ca/kitchener/article/waddleloo-map-helps-university-students-avoid-geese-during-nesting-season/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CTV
+          </a>
+          . Won a couple{" "}
+          <a
+            href="https://www.linkedin.com/in/anirudhdabas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            national hackathons
+          </a>
+          . Co-founded a{" "}
+          <a
+            href="https://www.instagram.com/trendweaversmedia/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            media agency
+          </a>{" "}
+          before university, ran it to $85K across 15+ clients.
         </p>
         <p>
           VP of Outreach at{" "}
