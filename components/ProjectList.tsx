@@ -38,7 +38,11 @@ export default function ProjectList({ projects }: Props) {
       {projects.map((project, index) => {
         const external = project.href.startsWith("http");
         return (
-          <li key={project.name} className="grid grid-cols-[2rem_1fr] gap-2">
+          <li
+            key={project.name}
+            className="grid grid-cols-[2rem_1fr] gap-2"
+            style={{ animation: `fadein 0.4s ease both ${index * 60}ms` }}
+          >
             <span className="pt-[0.35rem] text-[0.85rem] leading-none text-[var(--muted)] italic">
               {toRoman(index + 1)}.
             </span>

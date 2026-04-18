@@ -3,7 +3,9 @@ import PageTitle from "@/components/PageTitle";
 export default function Blog() {
   return (
     <>
-      <PageTitle>Anirudh Dabas (अनिरुद्ध दाबास)</PageTitle>
+      <PageTitle>
+        Anirudh Dabas <span className="hindi">(अनिरुद्ध डबास)</span>
+      </PageTitle>
       <div className="mt-10">
         <p>
           <a

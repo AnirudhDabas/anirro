@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond } from "next/font/google";
 import Sidebar from "@/components/Sidebar";
 import "./globals.css";
@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://anirudhdabas.com"),
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +33,19 @@ export default function RootLayout({
         <div className="mx-auto min-h-screen max-w-[1120px] px-6 pt-12 pb-16 md:px-12 md:pt-20 lg:px-24">
           <div className="flex flex-col gap-10 md:flex-row md:gap-16">
             <Sidebar />
-            <main className="w-full md:max-w-[800px]">{children}</main>
+            <main className="w-full md:max-w-[800px]">
+              {children}
+              <footer className="mt-24 text-[0.7rem] text-[var(--muted)] opacity-70">
+                Inspired by{" "}
+                <a
+                  href="https://www.zacharyyu.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Zachary Yu
+                </a>
+              </footer>
+            </main>
           </div>
         </div>
       </body>

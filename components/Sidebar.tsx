@@ -35,23 +35,19 @@ const secondary: NavItem[] = [
   { label: "Email", href: "mailto:a2dabas@uwaterloo.ca" },
 ];
 
-const linkBase =
-  "no-underline hover:underline hover:decoration-1 hover:underline-offset-[6px]";
-const linkActive = "underline decoration-1 underline-offset-[6px]";
-
 export default function Sidebar() {
   const pathname = usePathname();
 
   return (
     <aside className="w-full shrink-0 md:w-48">
-      <nav className="flex flex-col gap-1">
+      <nav className="flex flex-col gap-2">
         {primary.map((item) => {
           const active = pathname === item.href;
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={active ? linkActive : linkBase}
+              className={`nav-link${active ? "active" : ""}`}
             >
               {item.label}
             </Link>
@@ -59,12 +55,12 @@ export default function Sidebar() {
         })}
       </nav>
 
-      <nav className="mt-8 flex flex-col gap-1">
+      <nav className="mt-8 flex flex-col gap-2">
         {secondary.map((item) => (
           <a
             key={item.href}
             href={item.href}
-            className={linkBase}
+            className="nav-link"
             {...(item.external
               ? { target: "_blank", rel: "noopener noreferrer" }
               : {})}
@@ -74,20 +70,12 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      <div aria-hidden="true" className="mt-10 text-center text-[var(--muted)]">
+      <div
+        aria-hidden="true"
+        className="mt-10 hidden text-center text-[var(--muted)] md:block"
+      >
         ‹ ⚜ ›
       </div>
-      <p className="mt-2 text-center text-[0.7rem] text-[var(--muted)]">
-        Inspired by{" "}
-        <a
-          href="https://www.zacharyyu.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[var(--muted)] no-underline hover:underline"
-        >
-          Zachary Yu
-        </a>
-      </p>
     </aside>
   );
 }

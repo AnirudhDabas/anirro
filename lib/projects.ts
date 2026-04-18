@@ -13,23 +13,6 @@ export type EarlyProject = {
 
 export const projects: Project[] = [
   {
-    name: "feedfilterai",
-    href: "https://feedfilterai.vercel.app",
-    description:
-      "End-to-end AI moderation and analysis pipeline for social media content. Detects toxicity, sentiment, bias, named entities, and trending topics across thousands of posts in real time. FastAPI + Next.js + Zephyr-7B + GLiNER + SentenceTransformers + Detoxify + Docker.",
-  },
-  {
-    name: "shelf",
-    href: "https://github.com/AnirudhDabas/shelf",
-    description: "Autonomous search optimization for storefronts. Early stage.",
-  },
-  {
-    name: "stoody",
-    href: "https://getstoody.com",
-    description:
-      "AI-driven study partner matching for university students. Matches on course overlap, learning preferences, availability, and collaboration style. Built on Next.js + Supabase with embedding-based compatibility scoring. Currently in controlled pre-launch.",
-  },
-  {
     name: "waddleloo.com",
     href: "https://waddleloo.com",
     description:
@@ -46,6 +29,23 @@ export const projects: Project[] = [
     href: "https://github.com/AnirudhDabas", // TODO
     description:
       "1st place at a national hackathon. Cross-platform mobile safety app with anonymous AI chat for at-risk youth. Fine-tuned DistilBERT for real-time high-risk language detection, E2E encrypted messaging, severity-based alert routing, admin triage dashboard.",
+  },
+  {
+    name: "stoody",
+    href: "https://getstoody.com",
+    description:
+      "AI-driven study partner matching for university students. Matches on course overlap, learning preferences, availability, and collaboration style. Built on Next.js + Supabase with embedding-based compatibility scoring. Currently in controlled pre-launch.",
+  },
+  {
+    name: "feedfilterai",
+    href: "https://feedfilterai.vercel.app",
+    description:
+      "End-to-end AI moderation and analysis pipeline for social media content. Detects toxicity, sentiment, bias, named entities, and trending topics across thousands of posts in real time. FastAPI + Next.js + Zephyr-7B + GLiNER + SentenceTransformers + Detoxify + Docker.",
+  },
+  {
+    name: "shelf",
+    href: "https://github.com/AnirudhDabas/shelf",
+    description: "Autonomous search optimization for storefronts. Early stage.",
   },
   {
     name: "delriz",

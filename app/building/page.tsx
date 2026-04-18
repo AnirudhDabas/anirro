@@ -6,7 +6,9 @@ import { projects } from "@/lib/projects";
 export default function Building() {
   return (
     <>
-      <PageTitle>Anirudh Dabas (अनिरुद्ध दाबास)</PageTitle>
+      <PageTitle>
+        Anirudh Dabas <span className="hindi">(अनिरुद्ध डबास)</span>
+      </PageTitle>
       <ProjectList projects={projects} />
       <EarlyProjectList />
     </>
