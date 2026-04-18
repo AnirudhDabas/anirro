@@ -122,8 +122,9 @@ details[open].early-projects ol {
   }
 
   .sidebar {
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.75rem;
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: none;
   }
 
   .nav-primary {
@@ -134,8 +135,12 @@ details[open].early-projects ol {
     opacity: 0.8;
   }
 
+  .sidebar-ornament {
+    opacity: 0.8;
+  }
+
   main {
-    padding-top: 0;
+    padding-top: 0.5rem;
     margin-top: 0;
   }
 
