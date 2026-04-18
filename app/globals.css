@@ -114,18 +114,34 @@ details[open].early-projects ol {
 @media (max-width: 767px) {
   h1 {
     font-size: 1.6rem;
-  }
-
-  h1 .hindi {
-    display: none;
+    margin-top: 0;
   }
 
   header hr {
     margin-top: 0.75rem;
   }
 
-  main > div {
-    margin-top: 1.25rem;
+  .sidebar {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .nav-primary {
+    margin-bottom: 0.4rem;
+  }
+
+  .nav-secondary {
+    opacity: 0.8;
+  }
+
+  main {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  main > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
   }
 }
 

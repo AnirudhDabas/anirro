@@ -39,8 +39,8 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-full shrink-0 border-b border-[var(--rule)] pb-5 md:w-48 md:border-b-0 md:pb-0">
-      <nav className="flex flex-row flex-wrap gap-x-5 gap-y-1 md:flex-col md:gap-2">
+    <aside className="sidebar w-full shrink-0 border-b border-[var(--rule)] pb-5 md:w-48 md:border-b-0 md:pb-0">
+      <nav className="nav-primary flex flex-row flex-wrap gap-x-5 gap-y-1 md:flex-col md:gap-2">
         {primary.map((item) => {
           const active = pathname === item.href;
           return (
@@ -55,7 +55,7 @@ export default function Sidebar() {
         })}
       </nav>
 
-      <nav className="mt-3 flex flex-row flex-wrap gap-x-4 gap-y-1 text-[0.8rem] text-[var(--muted)] md:mt-8 md:flex-col md:gap-2 md:text-[1.0625rem] md:text-[var(--fg)]">
+      <nav className="nav-secondary mt-3 flex flex-row flex-wrap gap-x-4 gap-y-1 text-[0.8rem] text-[var(--muted)] md:mt-8 md:flex-col md:gap-2 md:text-[1.0625rem] md:text-[var(--fg)]">
         {secondary.map((item) => (
           <a
             key={item.href}
