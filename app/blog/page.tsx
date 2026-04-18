@@ -4,7 +4,17 @@ export default function Blog() {
   return (
     <>
       <PageTitle>Anirudh Dabas (अनिरुद्ध दाबास)</PageTitle>
-      <p className="mt-10">Coming soon.</p>
+      <div className="mt-10">
+        <p>
+          <a
+            href="https://medium.com/@anirudhdabas_72519/everything-you-need-to-know-about-the-hidden-cost-of-adding-an-llm-6a0481671fd4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Everything you need to know about the hidden cost of adding an LLM
+          </a>
+        </p>
+      </div>
     </>
   );
 }

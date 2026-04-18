@@ -8,12 +8,19 @@ export const projects: Project[] = [
   {
     name: "feedfilterai",
     href: "https://feedfilterai.vercel.app",
-    description: "AI-powered feed filtering. In progress.",
+    description:
+      "End-to-end AI moderation and analysis pipeline for social media content. Detects toxicity, sentiment, bias, named entities, and trending topics across thousands of posts in real time. FastAPI + Next.js + Zephyr-7B + GLiNER + SentenceTransformers + Detoxify + Docker.",
   },
   {
     name: "shelf",
     href: "https://github.com/AnirudhDabas/shelf",
     description: "Autonomous search optimization for storefronts. Early stage.",
+  },
+  {
+    name: "stoody",
+    href: "https://getstoody.com",
+    description:
+      "AI-driven study partner matching for university students. Matches on course overlap, learning preferences, availability, and collaboration style. Built on Next.js + Supabase with embedding-based compatibility scoring. Currently in controlled pre-launch.",
   },
   {
     name: "waddleloo.com",
@@ -32,6 +39,24 @@ export const projects: Project[] = [
     href: "https://github.com/AnirudhDabas", // TODO
     description:
       "1st place at a national hackathon. Cross-platform mobile safety app with anonymous AI chat for at-risk youth. Fine-tuned DistilBERT for real-time high-risk language detection, E2E encrypted messaging, severity-based alert routing, admin triage dashboard.",
+  },
+  {
+    name: "delriz",
+    href: "https://delriz.vercel.app",
+    description:
+      "Full-stack eCommerce platform that ran in production with live payments. Express + MongoDB backend with indexed queries and schema validation, Supabase Auth with row-level security, Razorpay integration with webhook-driven order updates. Intentionally decommissioned after the underlying business wound down.",
+  },
+  {
+    name: "reimagine relief",
+    href: "https://www.instagram.com/reimagine_relief/",
+    description:
+      "Co-founded a disaster relief initiative and built an offline-first, event-driven analytics platform to track aid distribution under unreliable network conditions. Mobilized 100+ volunteers, assisted 2,000+ flood victims.",
+  },
+  {
+    name: "viberotech",
+    href: "#", // TODO: add link if one exists
+    description:
+      "Accessibility-focused prototype that translates audio into vibrotactile feedback so d/Deaf and hard-of-hearing users can experience music through touch. Controlled frequency sweeps, burst rattle tests, and track-level vibrotactile mapping.",
   },
   {
     name: "trend weavers media",
