@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cormorantGaramond.className}>
       <body>
-        <div className="mx-auto min-h-screen max-w-[1120px] px-6 pt-12 pb-16 md:px-12 md:pt-20 lg:px-24">
+        <div className="mx-auto min-h-screen max-w-[1120px] px-6 pt-6 pb-16 md:px-12 md:pt-20 lg:px-24">
           <div className="flex flex-col gap-10 md:flex-row md:gap-16">
             <Sidebar />
             <main className="w-full md:max-w-[800px]">

@@ -60,9 +60,9 @@ export default function Home() {
           VP of Outreach at{" "}
           <a href="https://uwdsc.ca" target="_blank" rel="noopener noreferrer">
             UWDSC
-          </a>{" "}
-          right now. Exploring fall 2026 internships in SWE, AI infra, backend,
-          or applied ML.
+          </a>
+          . Exploring fall 2026 internships in SWE, AI infra, backend, or
+          applied ML.
         </p>
         <p>
           Say hi at{" "}
