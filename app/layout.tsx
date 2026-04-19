@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Anirudh Dabas",
   description:
     "Computer Science at Waterloo. Co-founder at Trend Weavers Media.",
-  metadataBase: new URL("https://anirudhdabas.com"),
+  metadataBase: new URL("https://anirro.com"),
 };
 
 export const viewport: Viewport = {
@@ -36,14 +36,38 @@ export default function RootLayout({
             <main className="w-full md:max-w-[800px]">
               {children}
               <footer className="attribution mt-16 mb-6 text-[0.65rem] text-[var(--muted)] opacity-45">
-                inspired by{" "}
-                <a
-                  href="https://www.zacharyyu.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div>
+                  inspired by{" "}
+                  <a
+                    href="https://www.zacharyyu.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    zachary yu
+                  </a>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    marginTop: "6px",
+                  }}
                 >
-                  zachary yu
-                </a>
+                  <a href="https://cs.uwatering.com/#anirro.com?nav=prev">←</a>
+                  <a
+                    href="https://cs.uwatering.com/#anirro.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src="/cs-webring.svg"
+                      alt="CS Webring"
+                      style={{ width: "24px", height: "auto", opacity: 0.8 }}
+                    />
+                  </a>
+                  <a href="https://cs.uwatering.com/#anirro.com?nav=next">→</a>
+                </div>
               </footer>
             </main>
           </div>
