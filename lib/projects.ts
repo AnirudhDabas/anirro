@@ -42,22 +42,16 @@ export const projects: Project[] = [
       "AI-driven study partner matching for university students. Matches on course overlap, learning preferences, availability, and collaboration style. Built on Next.js + Supabase with embedding-based compatibility scoring. Currently in controlled pre-launch.",
   },
   {
-    name: "feedfilterai",
-    href: "https://feedfilterai.vercel.app",
+    name: "findme (talent4assure)",
+    href: "#", // TODO
     description:
-      "End-to-end AI moderation and analysis pipeline for social media content. Detects toxicity, sentiment, bias, named entities, and trending topics across thousands of posts in real time. FastAPI + Next.js + Zephyr-7B + GLiNER + SentenceTransformers + Detoxify + Docker.",
+      "Built real-time GPS ingestion, geofence processing, background location syncing, and emergency alerts for a safety app. React Native + Node.js + MongoDB. Cut API latency by 30% via indexing, geospatial lookup caching, and aggregation pipeline tuning.",
   },
   {
     name: "delriz",
     href: "https://delriz.vercel.app",
     description:
       "Full-stack eCommerce platform that ran in production with live payments. Express + MongoDB backend with indexed queries and schema validation, Supabase Auth with row-level security, Razorpay integration with webhook-driven order updates. Intentionally decommissioned after the underlying business wound down.",
-  },
-  {
-    name: "reimagine relief",
-    href: "https://www.instagram.com/reimagine_relief/",
-    description:
-      "Co-founded a disaster relief initiative and built an offline-first, event-driven analytics platform to track aid distribution under unreliable network conditions. Mobilized 100+ volunteers, assisted 2,000+ flood victims.",
   },
   {
     name: "viberotech",
@@ -72,14 +66,21 @@ export const projects: Project[] = [
       "Co-founder (2023–2025). Built full-stack automation and analytics tools driving $85K+ revenue across 15+ clients. Python pipelines integrating Meta and TikTok APIs to automate weekly reporting, saving 20+ hours/month. Client platforms on Next.js + Supabase with RLS.",
   },
   {
-    name: "findme (talent4assure)",
-    href: "#", // TODO
+    name: "feedfilterai",
+    href: "https://feedfilterai.vercel.app",
     description:
-      "Built real-time GPS ingestion, geofence processing, background location syncing, and emergency alerts for a safety app. React Native + Node.js + MongoDB. Cut API latency by 30% via indexing, geospatial lookup caching, and aggregation pipeline tuning.",
+      "End-to-end AI moderation and analysis pipeline for social media content. Detects toxicity, sentiment, bias, named entities, and trending topics across thousands of posts in real time. FastAPI + Next.js + Zephyr-7B + GLiNER + SentenceTransformers + Detoxify + Docker.",
   },
 ];
 
 export const earlyProjects: EarlyProject[] = [
+  {
+    name: "reimagine relief",
+    href: "https://www.instagram.com/reimagine_relief/",
+    tech: "Offline-first, Event-driven Analytics",
+    description:
+      "Co-founded a disaster relief initiative and built an offline-first, event-driven analytics platform to track aid distribution under unreliable network conditions. Mobilized 100+ volunteers, assisted 2,000+ flood victims.",
+  },
   {
     name: "minesweeper ai",
     href: "https://github.com/AnirudhDabas",
