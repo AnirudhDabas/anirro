@@ -71,11 +71,21 @@ export default function Sidebar() {
           ))}
         </nav>
 
-        <span
-          aria-hidden="true"
-          className="sidebar-ornament text-[0.75rem] text-[var(--muted)] md:mt-10 md:block md:text-center md:text-[1rem]"
-        >
-          ‹ ⚜ ›
+        <span className="sidebar-ornament inline-flex items-center gap-1.5 leading-none text-[0.95rem] text-[var(--muted)] md:mt-8 md:flex md:justify-center md:gap-2 md:text-[1.15rem]">
+          <a href="https://cs.uwatering.com/#anirro.com?nav=prev" aria-label="Previous site in CS Webring">‹</a>
+          <a
+            href="https://cs.uwatering.com/#anirro.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="CS Webring"
+          >
+            <img
+              src="/cs-webring.svg"
+              alt="CS Webring"
+              className="h-auto w-[18px] opacity-80 md:w-[18px]"
+            />
+          </a>
+          <a href="https://cs.uwatering.com/#anirro.com?nav=next" aria-label="Next site in CS Webring">›</a>
         </span>
       </div>
     </aside>
